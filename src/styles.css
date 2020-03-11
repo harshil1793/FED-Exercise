@@ -11,3 +11,30 @@ h1,
 h3 {
     margin: 0;
 }
+
+a { text-decoration: none;}
+
+.container-lg {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.font16 { font-size: 16px; }
+.font20 { font-size: 20px; }
+
+.white { color: #fff; }
+.dark-blue {  color: #3A4457; }
+.grey{ color: #ccc; }
+.dark-grey { color: #333; }
+.blue { color: #6990B9; }
+.blue-grey { color: #455a64; }
+
+.fx-row { display: flex; -webkit-display: flex; }
+.fx-row-space-between { justify-content: space-between; }
+
+.fx-col-items-center { align-items: center; }
+
+.fx-wrap { flex-wrap: wrap;}
+
+.cursor-pointer { cursor: pointer; }
