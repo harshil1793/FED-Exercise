@@ -51,6 +51,8 @@ nav {
         order: 2;
         width: calc(100% - 40px);
         top: 70px;
+        -moz-border-radius: 8px;
+        -webkit-border-radius: 8px;
         border-radius: 8px;
     }
 
@@ -64,6 +66,8 @@ nav {
 
     .nav-menu a:hover {
         color: #181f22;
+        -moz-border-radius: 8px;
+        -webkit-border-radius: 8px;
         border-radius: 8px;
         background-color: #eee;
     }
@@ -81,6 +85,8 @@ nav {
     a {
         color: #fff;
         padding: 10px 20px;
+        -moz-border-radius: 8px;
+        -webkit-border-radius: 8px;
         border-radius: 8px;
     }
 

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 import { AppService } from './app.service';
+import { Series } from './shared/models/series.model';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,7 @@ import { AppService } from './app.service';
 export class AppComponent {
 
   subscription: Subscription;
-  seriesData;
+  seriesData: Series;
 
   constructor(private appService: AppService) { }
 
@@ -31,7 +32,7 @@ export class AppComponent {
 
   getEnglish() {
     this.appService.getEnglish()
-        .subscribe((data) => {
+        .subscribe((data: Series) => {
           this.seriesData = data;
           },
           error => {
@@ -41,7 +42,7 @@ export class AppComponent {
 
   getLatin() {
     this.subscription = this.appService.getLatin()
-        .subscribe((data) => {
+        .subscribe((data: Series) => {
           this.seriesData = data;
           },
           error => {

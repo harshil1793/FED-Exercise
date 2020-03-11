@@ -4,6 +4,7 @@ body {
     font: 16px "Source Sans Pro", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    color: #fff;
 }
 
 p,
@@ -30,11 +31,34 @@ a { text-decoration: none;}
 .blue { color: #6990B9; }
 .blue-grey { color: #455a64; }
 
-.fx-row { display: flex; -webkit-display: flex; }
-.fx-row-space-between { justify-content: space-between; }
+.fx-row {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+.fx-row-space-between {
+    justify-content: space-between;
+    -webkit-box-pack: justify;
+    -moz-box-pack: justify;
+    -ms-flex-pack: justify;
+}
 
-.fx-col-items-center { align-items: center; }
+.fx-col-items-center {
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
 
-.fx-wrap { flex-wrap: wrap;}
+.fx-wrap {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
 
 .cursor-pointer { cursor: pointer; }

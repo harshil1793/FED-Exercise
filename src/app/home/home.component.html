@@ -1,3 +1,15 @@
 <section>
     <div class="block"></div>
+
+    <div class="container-lg content fx-row fx-col-items-center">
+        <div class="intro">
+            <h1>{{ seriesData?.heading }}</h1>
+
+            <p>
+                {{ seriesData?.description }}
+            </p>
+        </div>
+
+        <video id="video" src="{{ videoEmbed }}" controls="true" crossOrigin="anonymous"></video>
+    </div>
 </section>
