@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+html, body { height: 100%; }
+body {
+    margin: 0;
+    font: 16px "Source Sans Pro", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+p,
+h1,
+h3 {
+    margin: 0;
+}
