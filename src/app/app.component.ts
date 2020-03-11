@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Subscription } from 'rxjs';
+
+import { AppService } from './app.service';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +10,42 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+  subscription: Subscription;
+  seriesData;
+
+  constructor(private appService: AppService) { }
+
+  ngOnInit() {
+    this.getEnglish();
+  }
+
+  ngOnDestroy() {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
+  }
+
   changeLanguage(language: string) {
-    console.log(language);
+    language === 'english' ? this.getEnglish() : this.getLatin();
+  }
+
+  getEnglish() {
+    this.appService.getEnglish()
+        .subscribe((data) => {
+          this.seriesData = data;
+          },
+          error => {
+            console.log(error);
+        });
+  }
+
+  getLatin() {
+    this.subscription = this.appService.getLatin()
+        .subscribe((data) => {
+          this.seriesData = data;
+          },
+          error => {
+            console.log(error);
+        });
   }
 }
