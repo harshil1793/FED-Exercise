@@ -1,9 +1,9 @@
-<header class="white">
+<header>
     <nav class="container-lg fx-row fx-row-space-between fx-col-items-center fx-wrap">
 
         <!-- Hamburger menu and logo -->
         <div class="fx-row fx-col-items-center logo-block">
-            <i class="material-icons icon white font32 cursor-pointer hide-gt-md" (click)="toggleMenu()">
+            <i class="material-icons icon font32 cursor-pointer hide-gt-md" (click)="toggleMenu()">
                 menu
             </i>
             <h1 class="logo font32">Original show</h1>
@@ -13,9 +13,8 @@
         <div class="fx-row fx-col-items-center language" color="primary">
             <i class="material-icons icon">language</i>
             
-            <mat-form-field class="font16 language-field" color="primary" appearance="outline">
-                <mat-label>Language</mat-label>
-                <mat-select [(value)]="selected" (selectionChange)="emitValue($event.value)">
+            <mat-form-field class="font16 language-field" color="primary">
+                <mat-select role="optionList" [(value)]="selected" (selectionChange)="emitValue($event.value)">
                 <mat-option value="english">English</mat-option>
                 <mat-option value="latin">Latin</mat-option>
                 </mat-select>
