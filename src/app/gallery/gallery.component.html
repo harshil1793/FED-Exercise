@@ -1,0 +1,28 @@
+<section *ngIf="seriesData">
+    <div class="container-lg fx-col">
+        <h2 class="dark-grey">Gallery<hr></h2>
+        <div class="fx-col fx-col-space-evenly">
+            <div class="fx-col-sm fx-row-sm fx-row fx-row-space-between fx-col-items-center">
+                <div class="intro font16">
+                    <p *ngFor="let snippet of seriesData?.snippets" class="snippet">
+                        {{ snippet }}
+                    </p> 
+                </div>
+                <div class="image-slider">
+                    <ng-image-slider
+                        [images]="images"
+                        [animationSpeed]="0.2"
+                        [slideImage]="1"
+                        [imageSize]="{width: '100%', height: '40%',space: 0}"
+                        [imagePopup]= "true"
+                        #nav></ng-image-slider>
+                </div>
+            </div>
+        </div>
+
+        <div class="quote blue-grey width100 fx-col fx-col-items-center">
+            <h1>{{ seriesData?.quote.text }}</h1>
+            <i>-{{ seriesData?.quote.author }}</i>
+        </div>
+    </div>
+</section>

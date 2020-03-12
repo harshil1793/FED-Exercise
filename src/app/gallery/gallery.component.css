@@ -1,0 +1,51 @@
+section {
+    background-color: #fff;
+    padding-top: 50px; 
+}
+
+h2 {
+    text-align: center;
+}
+
+.snippet {
+    color: #3e3e3e;
+    line-height: 1.5;
+    letter-spacing: .012em;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.quote {
+    margin: 100px 0;
+}
+
+.quote h1 {
+    font-family: serif;
+    text-align: center;
+    font-style: italic;
+    font-weight: 600;
+}
+
+.quote i{
+    padding: 20px;
+}
+
+@media screen and (max-width: 766px){
+    .intro, .image-slider {
+        width: 100%;
+    }
+    .intro {
+        margin-bottom: 40px;
+    }
+}
+
+@media screen and (min-width: 767px){
+    .intro, .image-slider {
+        width: 50%;
+        margin: 20px;
+    }
+    .quote h1{
+        font-size: 38px;
+        width: 75%;
+    }
+}
