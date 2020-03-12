@@ -1,0 +1,39 @@
+<section *ngIf="seriesData">
+    <div class="container-lg">
+        <h2 class="dark-grey">Episodes <hr></h2>
+        <div class="fx-row fx-row-end sort-menu">
+            <button mat-button color="primary" [matMenuTriggerFor]="menu">
+                <i class="material-icons">
+                    sort
+                </i>
+                Sort
+            </button>
+        </div>
+        <div class="cards">
+            <mat-card *ngFor="let episode of episodes" class="mat-card-custom">
+                <div class="fx-row" class="card-view">
+                    <img src="../../assets/images/episodes_place_holder_low.jpg" alt="episode image">
+
+                    <div class="card-details width100">
+                        <div class="fx-row fx-row-space-between">
+                            <h3 class="blue-grey">{{ episode.name }}</h3>
+                            <span class="rating fx-row fx-col-items-center">
+                                <i class="material-icons">
+                                    star
+                                </i>
+                                {{ episode.rating }}
+                            </span>
+                        </div>
+                        <p class="font16 blue-grey">Season {{ episode.season }}</p>
+                    </div>
+                    
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</section>
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item>Highest Rating</button>
+  <button mat-menu-item>Lowest Rating</button>
+</mat-menu>
