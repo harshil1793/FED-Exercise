@@ -12,7 +12,7 @@ https://stranger-things-app-68cd9.firebaseapp.com/
 
    ```bash
    git clone https://github.com/harshil1793/FED-Exercise.git
-   cd heroes-angular
+   cd FED-Exercise
    ```
 
 1. Install the npm packages
