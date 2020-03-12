@@ -14,7 +14,7 @@
             <i class="material-icons icon">language</i>
             
             <mat-form-field class="font16 language-field" color="primary">
-                <mat-select role="optionList" [(value)]="selected" (selectionChange)="emitValue($event.value)">
+                <mat-select [(value)]="selected" (selectionChange)="emitValue($event.value)">
                 <mat-option value="english">English</mat-option>
                 <mat-option value="latin">Latin</mat-option>
                 </mat-select>

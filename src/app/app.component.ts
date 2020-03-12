@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { Subscription } from 'rxjs';
-
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
 import { AppService } from './app.service';
 import { Series } from './shared/models/series.model';
+import { ErrorDialog } from './shared/error-dialog/error.dialog';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +16,10 @@ export class AppComponent {
   subscription: Subscription;
   seriesData: Series;
 
-  constructor(private appService: AppService) { }
+  constructor(
+    private appService: AppService,
+    private _snackBar: MatSnackBar,
+    public dialog: MatDialog) { }
 
   ngOnInit() {
     this.getEnglish();
@@ -27,16 +32,19 @@ export class AppComponent {
   }
 
   changeLanguage(language: string) {
-    language === 'english' ? this.getEnglish() : this.getLatin();
+    language === 'english' ? this.getEnglish(true) : this.getLatin();
   }
 
-  getEnglish() {
+  getEnglish(requestToChange?: boolean) {
     this.appService.getEnglish()
         .subscribe((data: Series) => {
           this.seriesData = data;
-          },
-          error => {
-            console.log(error);
+          if (requestToChange) {
+            this.openSnackBar('English successfully updated.');
+          }
+        },
+        error => {
+          this.openDialog(error.erroe.message);
         });
   }
 
@@ -44,9 +52,22 @@ export class AppComponent {
     this.subscription = this.appService.getLatin()
         .subscribe((data: Series) => {
           this.seriesData = data;
+          this.openSnackBar('Latin successfully updated.');
           },
-          error => {
-            console.log(error);
+        error => {
+          this.openDialog(error.erroe.message);
         });
   }
+
+  openSnackBar(message: string) {
+    this._snackBar.open(message, 'Done', { duration: 2000})
+  }
+
+  openDialog(message: string) {
+    const dialogRef = this.dialog.open(ErrorDialog, {
+      width: '300px',
+      data: { message: message}
+    });
+  }
+
 }

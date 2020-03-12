@@ -1,3 +1,4 @@
-<app-nav-bar (selectedLanguage)="changeLanguage($event)"></app-nav-bar>
+<app-nav-bar id="home" (selectedLanguage)="changeLanguage($event)"></app-nav-bar>
 <app-home [seriesData]="seriesData"></app-home>
-<app-gallery [seriesData]="seriesData"></app-gallery>
+<app-gallery id="gallery" [seriesData]="seriesData"></app-gallery>
+<app-episodes id="episodes" [seriesData]="seriesData"></app-episodes>
