@@ -1,0 +1,47 @@
+<section>
+    <div class="block"></div>
+
+    <div class="container-lg content fx-row fx-col-items-center" *ngIf="seriesData">
+        <div class="intro">
+            <h1>{{ seriesData?.heading }}</h1>
+            <div class="chips fx-row fx-col-items-center">
+                <span appChip="#cd0000" fontColor="#fff">TV Series</span>
+                <span appChip="#fff" fontColor="#e7711b" class="chip">
+                    <i class="material-icons">
+                        star
+                    </i>
+                    {{ averageRating() | number:'1.0-2' }}
+                </span>
+            </div>
+            <p>{{ seriesData?.description }}</p>
+        </div>
+        <video id="video" src="{{ videoEmbed }}" controls="true" crossOrigin="anonymous"></video>
+    </div>
+
+    <div class="container-lg" *ngIf="seriesData">
+        <div class="width100 info-card fx-row-space-between fx-wrap">
+            <div>
+                <h3 class="title">Genre</h3>
+                <span class="font16 grey">
+                    {{ showDetails?.genre.join(', ') }}
+                </span>
+            </div>
+            <div>
+                <h3 class="title">Director</h3>
+                <span class="font16 grey">
+                    {{ showDetails?.director.join(', ') }}
+                </span>
+            </div>
+            <div>
+                <h3 class="title">Locations</h3>
+                <span class="font16 grey">
+                    {{ seriesData?.locations.join(', ') }}
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-lg error" *ngIf="!seriesData">
+        <h3>Sorry, No data received</h3>
+    </div>
+</section>

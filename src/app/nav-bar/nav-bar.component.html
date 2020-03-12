@@ -1,0 +1,37 @@
+<header>
+    <nav class="container-lg fx-row fx-row-space-between fx-col-items-center fx-wrap">
+
+        <!-- Hamburger menu and logo -->
+        <div class="fx-row fx-col-items-center logo-block">
+            <i class="material-icons icon font32 cursor-pointer hide-gt-md" (click)="toggleMenu()">
+                menu
+            </i>
+            <h1 class="logo font32">Original show</h1>
+        </div>
+
+        <!-- Language -->
+        <div class="fx-row fx-col-items-center language" color="primary">
+            <i class="material-icons icon">language</i>
+            
+            <mat-form-field class="font16 language-field" color="primary">
+                <mat-select [(value)]="selected" (selectionChange)="emitValue($event.value)">
+                <mat-option value="english">English</mat-option>
+                <mat-option value="latin">Latin</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <!-- Navigation menu (Desktop and Mobile)-->
+        <div class="fx-row nav-menu" *ngIf="showMobileMenu">
+            <a href="#home" (click)="toggleMenu()">
+                Introduction
+            </a>
+            <a href="#gallery" (click)="toggleMenu()">
+                Gallary
+            </a>
+            <a href="#episodes" (click)="toggleMenu()">
+                Episodes
+            </a>
+        </div>
+    </nav>
+</header>

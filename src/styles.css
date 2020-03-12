@@ -1,1 +1,112 @@
-/* You can add global styles to this file, and also import other style files */
+html,
+body { height: 100%; }
+body {
+    margin: 0;
+    font: 16px "Source Sans Pro", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #fff;
+    background-color: #333;
+}
+
+p,
+h1,
+h3 {
+    margin: 0;
+}
+
+h2 {
+    line-height: 1.09091;
+    font-weight: 600;
+    letter-spacing: -.002em;
+    font-size: 44px;
+}
+
+a { text-decoration: none;}
+
+hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    border-color: #6990B9;
+    border-width: 3px;
+    max-width: 50px;
+}
+
+.container-lg {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.font16 { font-size: 16px; }
+.font18 { font-size: 18px; }
+
+.dark-blue {  color: #3A4457; }
+.grey{ color: #eee; }
+.dark-grey { color: #333; }
+.blue-grey { color: #455a64; }
+
+.fx-row {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+.fx-row-space-between {
+    justify-content: space-between;
+    -webkit-box-pack: justify;
+    -moz-box-pack: justify;
+    -ms-flex-pack: justify;
+}
+
+.fx-row-end {
+    justify-content: flex-end;
+}
+
+.fx-col {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.fx-col-space-evenly {
+    justify-content: space-evenly;
+}
+
+.fx-col-items-center {
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.fx-wrap {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.cursor-pointer { cursor: pointer; }
+
+@media screen and (max-width: 766px){
+    .fx-col-sm {
+        display: flex;
+        flex-direction: column;
+    }
+    h2 { font-size: 32px; }
+}
+
+@media screen and (min-width: 767px){
+    .fx-row-sm {
+        display: flex;
+    }
+    h2 { font-size: 44px; }
+}
