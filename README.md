@@ -11,7 +11,7 @@ https://stranger-things-app-68cd9.firebaseapp.com/
 1. Clone this repository
 
    ```bash
-   git clone https://github.com/johnpapa/heroes-angular.git
+   git clone https://github.com/harshil1793/FED-Exercise.git
    cd heroes-angular
    ```
 
