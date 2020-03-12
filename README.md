@@ -47,6 +47,7 @@ https://stranger-things-app-68cd9.firebaseapp.com/
   - [x] Sort episodes
   - [x] Translated content
   - [x] Image slider
+  - [x] Average Rating
  
   
   ## Thank You
